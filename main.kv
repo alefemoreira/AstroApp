@@ -7,6 +7,9 @@
         
     Fases:
         name:'Fases_AtaqueDosMeteoros'
+
+	AtaqueDosMeteoros:
+		name:'Ataque dos Meteoros Fase 1'
     
 <TelaInicial>:
     canvas:
@@ -123,6 +126,9 @@
 
                 Button:
                     text: '1'
+					on_release:
+						root.manager.transition.direction = 'left' 
+						app.root.current='Ataque dos Meteoros Fase 1'
 
                 Button:
                     text: '2'
@@ -135,3 +141,23 @@
 
                 Button:
                     text: '5'
+
+<AtaqueDosMeteoros>:
+	canvas:
+		Color:
+			rgba: 1,1,1,1
+		Rectangle:
+			size:self.size
+			pos:self.pos
+			source:'img/bgMenu3.png'
+			#alow_stretch:True
+	BoxLayout:
+		orientation:'vertical'
+
+		ActionBar:
+			ActionView:
+				ActionPrevious:
+					title:'1° Fase'
+                    on_release: app.root.current = 'Tela Inicial'
+		BoxLayout:
+

@@ -11,9 +11,9 @@ class Fases(Screen):
     pass
 
 
-class JogoAdM(Screen):
+class AtaqueDosMeteoros(Screen):
     pass
 
 
-class FimAdm(Screen):
+class Fim(Screen):
     pass
