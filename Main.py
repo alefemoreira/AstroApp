@@ -22,10 +22,9 @@ class Main(App):
 		return Gerenciador()
 	
 	def chamaPlayThru(self):
-		#Clock.schedule_interval(self.playThru, 1.0/120.0)
-		pass
+		Clock.schedule_interval(self.playThru, 1.0/30.0)
 
-	def playThru(self):
-		pass
+	def playThru(self, *args):
+		print('Falta Implementar')
 
 Main().run()
