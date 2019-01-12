@@ -1,10 +1,13 @@
 from kivy.uix.widget import Widget
-from kivy.properties import ListProperty, StringProperty
+from kivy.properties import ListProperty, StringProperty, NumericProperty
 from kivy.graphics import Color, Ellipse
+from math import sin, cos, pi
 
 class Planetas(Widget):
 	imagem = StringProperty(None)
 	tamanho = ListProperty([100, 100])
+	raio = NumericProperty(0)
+	pos = ListProperty((0,0))
 
 	def __init__(self, **kw):
 		super().__init__(**kw)
@@ -22,3 +25,6 @@ class Planetas(Widget):
 		with self.canvas.before:
 			Color(rgba=(1,1,1,1))
 			Ellipse(size=self.tamanho, source=self.imagem)
+
+	def movimentacao():
+		pass
