@@ -20,7 +20,7 @@ class AtaqueDosMeteoros(Jogo):
         super().__init__(**kw)
 
     def chamaPlayThru(self):
-        Clock.schedule_interval(self.playThru, 1.0/30.0)
+        Clock.schedule_interval(self.playThru, 1.0/120.0)
 
     def playThru(self, *args):
         self.ids.mercurio.movimentacao()
