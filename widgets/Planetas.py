@@ -6,8 +6,8 @@ from math import sin, cos, pi
 class Planetas(Widget):
 	imagem = StringProperty(None)
 	tamanho = ListProperty([100, 100])
-	raio = NumericProperty(0)
-	pos = ListProperty((0,0))
+	#raio = NumericProperty(0)
+	#pos = ListProperty((0,0))
 
 	def __init__(self, **kw):
 		super().__init__(**kw)
@@ -26,5 +26,5 @@ class Planetas(Widget):
 			Color(rgba=(1,1,1,1))
 			Ellipse(size=self.tamanho, source=self.imagem)
 
-	def movimentacao():
-		pass
+	def movimentacao(r=100, v=10*pi/180, *args):
+		print('hello')

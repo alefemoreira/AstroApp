@@ -1,149 +1,151 @@
 <Gerenciador>:
     TelaInicial:
         name: 'Tela Inicial'
+		
+		canvas:
+    	    Color:
+        	    rgba:1,1,1,1
+	        Rectangle:
+	            size:self.size
+	            pos:self.pos
+	            source:'img/bgMenu3.png'
+
+		BoxLayout:
+			id:'ImagemEBotoes'
+			orientation:'vertical'
+			spacing: '10dp'
+			padding: self.width*0.25, self.height*0.15
+
+			Image:
+				source:'img/logoApp.png'
+				size_hint_y:0.75
+				allow_stretch: True
+
+			BoxLayout:
+				id:'Botãos'
+				orientation: 'vertical'
+				padding: self.width*0.25, self.height*0.05
+				spacing: '15dp'
+
+				Button:
+					text:'Jogos'
+					#on_release: app.root.current = 'Gerenciador de Jogos'
+
+					on_release: app.root.current = 'Fases_AtaqueDosMeteoros'
+
+				Button:
+					text:'Sobre A Astronomia'
+
+				Button:
+					text:'Licenças'
+
+
+
     
     GerenciadorDeJogos:
         name: 'Gerenciador de Jogos'
-        
+
+		canvas:
+			Color:
+				rgba:1,1,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+				source:'img/bgMenu3.png'
+
+		BoxLayout:
+			id: 'Ações'
+			orientation: 'vertical'
+
+			ActionBar:
+				ActionView:
+					ActionPrevious:
+						title: 'Gerenciador de Jogos'
+						on_release: app.root.current = 'Tela Inicial'
+
+			BoxLayout:
+				id: 'ImagemEBotoesGdJ'
+				orientation: 'vertical'
+				orientation:'vertical'
+				padding: self.width*0.25, self.height*0.25
+				spacing: '20dp'
+
+				Image:
+					source: 'img/GerenciadorJogos.png'
+					size_hint_y:0.4
+					allow_stretch: True
+
+				BoxLayout:
+					id:'BotãosGdJ'
+					orientation: 'vertical'
+					padding: self.width*0.25, self.height*0.05
+					spacing: '15dp'
+
+					Button:
+						text: 'Ataque dos meteoros'
+						on_release: app.root.current = 'Fases_AtaqueDosMeteoros'
+    
     Fases:
         name:'Fases_AtaqueDosMeteoros'
+		
+		canvas:
+			Color:
+				rgba:1,1,1,1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+				source:'img/bgMenu3.png'
+		
+		BoxLayout:
+			id: 'AçãoF'
+			orientation: 'vertical'
+
+			ActionBar:
+				ActionView:
+					ActionPrevious:
+						title: 'Fases'
+						on_release: app.root.current='Tela Inicial'
+			
+			BoxLayout:
+				id: 'ImagemEBotoesF'
+				orientation:'vertical'
+				padding: self.width*0.25, self.height*0.25
+				spacing: '20dp'
+
+				Image:
+					source: 'img/Fases.png'
+					size_hint_y:0.4
+					allow_stretch: True
+
+
+				BoxLayout:
+					id: 'BotoesF'
+					spacing: '20dp'
+					padding: self.width*0.1, self.height*0.3
+
+					Button:
+						text: '1'
+						on_release: 
+							app.root.current='Ataque dos Meteoros'
+							app.root.get_screen('Ataque dos Meteoros').chamaPlayThru()
+
+					Button:
+						text: '2'
+
+					Button:
+						text: '3'
+
+					Button:
+						text: '4'
+
+					Button:
+						text: '5'
 
 	AtaqueDosMeteoros:
-		name:'Ataque dos Meteoros Fase 1'
-    
-<TelaInicial>:
-    canvas:
-        Color:
-            rgba:1,1,1,1
-        Rectangle:
-            size:self.size
-            pos:self.pos
-            source:'img/bgMenu3.png'
-
-    BoxLayout:
-        id:'ImagemEBotoes'
-        orientation:'vertical'
-        spacing: '10dp'
-        padding: self.width*0.25, self.height*0.15
-
-        Image:
-            source:'img/logoApp.png'
-            size_hint_y:0.75
-            allow_stretch: True
-
-        BoxLayout:
-            id:'Botãos'
-            orientation: 'vertical'
-            padding: self.width*0.25, self.height*0.05
-            spacing: '15dp'
-
-            Button:
-                text:'Jogos'
-                on_release: app.root.current = 'Gerenciador de Jogos'
-
-            Button:
-                text:'Sobre A Astronomia'
-
-            Button:
-                text:'Licenças'
-                    
-<GerenciadorDeJogos>:
-    canvas:
-        Color:
-            rgba:1,1,1,1
-        Rectangle:
-            size:self.size
-            pos:self.pos
-            source:'img/bgMenu3.png'
-
-    BoxLayout:
-        id: 'Ações'
-        orientation: 'vertical'
-
-        ActionBar:
-            ActionView:
-                ActionPrevious:
-                    title: 'Gerenciador de Jogos'
-                    on_release: app.root.current = 'Tela Inicial'
-
-        BoxLayout:
-            id: 'ImagemEBotoesGdJ'
-            orientation: 'vertical'
-            orientation:'vertical'
-            padding: self.width*0.25, self.height*0.25
-            spacing: '20dp'
-
-            Image:
-                source: 'img/GerenciadorJogos.png'
-                size_hint_y:0.4
-                allow_stretch: True
-
-            BoxLayout:
-                id:'BotãosGdJ'
-                orientation: 'vertical'
-                padding: self.width*0.25, self.height*0.05
-                spacing: '15dp'
-
-                Button:
-                    text: 'Ataque dos meteoros'
-                    on_release: app.root.current = 'Fases_AtaqueDosMeteoros'
-
-<Fases>:
-    canvas:
-        Color:
-            rgba:1,1,1,1
-        Rectangle:
-            size:self.size
-            pos:self.pos
-            source:'img/bgMenu3.png'
-    
-    BoxLayout:
-        id: 'AçãoF'
-        orientation: 'vertical'
-
-        ActionBar:
-            ActionView:
-                ActionPrevious:
-                    title: 'Fases'
-                    on_release: app.root.current='Tela Inicial'
-        
-        BoxLayout:
-            id: 'ImagemEBotoesF'
-            orientation:'vertical'
-            padding: self.width*0.25, self.height*0.25
-            spacing: '20dp'
-
-            Image:
-                source: 'img/Fases.png'
-                size_hint_y:0.4
-                allow_stretch: True
-
-
-            BoxLayout:
-                id: 'BotoesF'
-                spacing: '20dp'
-                padding: self.width*0.1, self.height*0.3
-
-                Button:
-                    text: '1'
-					on_release:
-						root.manager.transition.direction = 'left' 
-						app.root.current='Ataque dos Meteoros Fase 1'
-						app.chamaPlayThru()
-
-                Button:
-                    text: '2'
-
-                Button:
-                    text: '3'
-
-                Button:
-                    text: '4'
-
-                Button:
-                    text: '5'
 
 <AtaqueDosMeteoros>:
+	name:'Ataque dos Meteoros'
+
 	canvas:
 		Color:
 			rgba: 1,1,1,1
@@ -152,14 +154,18 @@
 			pos:self.pos
 			source:'img/bgMenu3.png'
 			#alow_stretch:True
+
+	Planetas:
+		id: mercurio
+		imagem:'img/Planetas/Mercurio.png'
+
 	BoxLayout:
+		id: box
 		orientation:'vertical'
 
 		ActionBar:
 			ActionView:
 				ActionPrevious:
 					title:'1° Fase'
-                    on_release: app.root.current = 'Tela Inicial'
-		BoxLayout:
-			Planetas:
-				imagem:'img/Planetas/Mercurio.png'
+					on_release: app.root.current = 'Tela Inicial'
+		RelativeLayout:		

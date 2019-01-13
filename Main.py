@@ -11,20 +11,24 @@ from telas.Telas import *
 
 Config.read('config.ini')
 
-
 class Gerenciador(ScreenManager):
 	def __init__(self, **kw):
 		super().__init__(**kw)
+
+class AtaqueDosMeteoros(Jogo):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+
+    def chamaPlayThru(self):
+        Clock.schedule_interval(self.playThru, 1.0/30.0)
+
+    def playThru(self, *args):
+        self.ids.mercurio.movimentacao()
 
 
 class Main(App):
 	def build(self):
 		return Gerenciador()
 	
-	def chamaPlayThru(self):
-		Clock.schedule_interval(self.playThru, 1.0/30.0)
-
-	def playThru(self, *args):
-		print('Falta Implementar')
 
 Main().run()

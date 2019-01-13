@@ -11,7 +11,7 @@ class Fases(Screen):
     pass
 
 
-class AtaqueDosMeteoros(Screen):
+class Jogo(Screen):
     pass
 
 
