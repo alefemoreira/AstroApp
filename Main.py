@@ -23,7 +23,7 @@ class AtaqueDosMeteoros(Jogo):
         Clock.schedule_interval(self.playThru, 1.0/120.0)
 
     def playThru(self, *args):
-        self.ids.mercurio.movimentacao()
+        self.ids.mercurio.movimentacao(self.size, 300, 0.5 * 4.14)
 
 
 class Main(App):

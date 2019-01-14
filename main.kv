@@ -29,9 +29,8 @@
 
 				Button:
 					text:'Jogos'
-					#on_release: app.root.current = 'Gerenciador de Jogos'
+					on_release: app.root.current = 'Gerenciador de Jogos'
 
-					on_release: app.root.current = 'Fases_AtaqueDosMeteoros'
 
 				Button:
 					text:'Sobre A Astronomia'
@@ -157,6 +156,7 @@
 
 	Planetas:
 		id: mercurio
+		tamanho: [44, 44]
 		imagem:'img/Planetas/Mercurio.png'
 
 	BoxLayout:
