@@ -30,7 +30,7 @@ class Sol(Widget):
             Ellipse(size=self.tamanho, source=self.imagem, pos=self.Pos)
             
             PushMatrix()
-            Rotate(angle=rotation, origin=self.center)
+            Rotate(angle=rotation, origin=(self.screen[0]/2, self.screen[1]))
             PopMatrix()
 
     def giro(self, screen=[1280, 720], *args):
