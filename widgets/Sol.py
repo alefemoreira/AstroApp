@@ -24,17 +24,24 @@ class Sol(Widget):
     def atualizar(self, *args):
         global rotation
         self.canvas.before.clear()
+        self.canvas.clear()
+        self.canvas.after.clear()
 
         with self.canvas.before:
-            Color(rgba=(1, 1, 1, 1))
-            Ellipse(size=self.tamanho, source=self.imagem, pos=self.Pos)
-            
             PushMatrix()
             Rotate(angle=rotation, origin=(self.screen[0]/2, self.screen[1]))
+
+        with self.canvas:
+            Color(rgba=(1, 1, 1, 1))
+            Ellipse(size=self.tamanho, source=self.imagem, pos=self.Pos)
+
+        with self.canvas.after:
             PopMatrix()
+
 
     def giro(self, screen=[1280, 720], *args):
         global rotation
+
         self.screen = screen
         self.Pos = [screen[0] / 2 - self.tamanho[0] / 2, screen[1] - self.tamanho[1] / 2]
         self.atualizar()
