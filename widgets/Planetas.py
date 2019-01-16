@@ -1,5 +1,5 @@
 from kivy.uix.widget import Widget
-from kivy.properties import ListProperty, StringProperty, NumericProperty
+from kivy.properties import ListProperty, StringProperty
 from kivy.graphics import Color, Ellipse
 from math import sin, cos, pi
 
