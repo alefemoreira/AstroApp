@@ -27,7 +27,7 @@ class Planetas(Widget):
             Color(rgba=(1,1,1,1))
             Ellipse(size=self.tamanho, source=self.imagem, pos=self.Pos)
 
-    def movimentacao(self, screenSize, r=100, v=10, *args):
+    def movimentacao(self, screenSize, r=100, v=10.0, *args):
         global x
 
         width = screenSize[0]

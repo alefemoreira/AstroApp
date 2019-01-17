@@ -45,4 +45,4 @@ class Sol(Widget):
         self.screen = screen
         self.Pos = [screen[0] / 2 - self.tamanho[0] / 2, screen[1] - self.tamanho[1] / 2]
         self.atualizar()
-        rotation += 3
+        rotation += 1.5

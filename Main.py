@@ -6,7 +6,7 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.config import Config
 from kivy.clock import Clock
-from widgets import Sol, Meteoros, Planetas
+from widgets import Sol, Meteoro, Planetas
 from telas.Telas import *
 
 Config.read('config.ini')
@@ -24,10 +24,10 @@ class AtaqueDosMeteoros(Jogo):
 
     def playThru(self, *args):
         self.ids.sol.giro(screen=self.size)
-        self.ids.mercurio.movimentacao(self.size, 300, 0.25 * 4.14)
-        self.ids.venus.movimentacao(self.size, 430, 0.25 * 1.62)
-        self.ids.terra.movimentacao(self.size, 570, 0.25)
-        self.ids.marte.movimentacao(self.size, 680, 0.25 * 0.53)
+        self.ids.mercurio.movimentacao(self.size, self.size[0]*0.234, 0.25 * 4.14)
+        self.ids.venus.movimentacao(self.size, self.size[0]*0.335 , 0.25 * 1.62)
+        self.ids.terra.movimentacao(self.size, self.size[0]*0.445 , 0.25)
+        self.ids.marte.movimentacao(self.size, self.size[0]*0.531 , 0.25 * 0.53)
 
 class Main(App):
 	def build(self):

@@ -157,27 +157,39 @@
 	Sol:
 		id: sol
 		imagem: 'img/Sol.png'
-		tamanho: [450, 450]
+		tamanho: [root.size[0]*0.351, root.size[0]*0.351]
 
 	Planetas:
 		id: mercurio
-		tamanho: [44, 44]
+		#tamanho: [44, 44]
+		tamanho: [root.size[0]*0.034, root.size[0]*0.034]
 		imagem:'img/Planetas/Mercurio.png'
 
 	Planetas:
 		id: venus
-		tamanho: [104, 104]
+		#tamanho: [104, 104]
+		tamanho: [root.size[0]*0.081, root.size[0]*0.081]
 		imagem:'img/Planetas/Venus.png'
 
 	Planetas:
 		id: terra
-		tamanho: [120, 120]
+		#tamanho: [120, 120]
+		tamanho: [root.size[0]*0.093, root.size[0]*0.093]
 		imagem:'img/Planetas/Terra.png'
 
 	Planetas:
 		id: marte
-		tamanho: [61, 61]
+		#tamanho: [61, 61]
+		tamanho: [root.size[0]*0.047, root.size[0]*0.047]
 		imagem:'img/Planetas/Marte.png'
+	
+	Meteoro:
+		id: meteoro
+		#tamanho: [40, 102]
+		tamanho: [root.size[0]*0.031, root.size[0]*0.079]
+		size_hint_y:14.1
+
+		imagem: 'img/giphy.gif'
 
 	BoxLayout:
 		id: box
