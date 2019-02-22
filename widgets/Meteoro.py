@@ -24,4 +24,8 @@ class Meteoro(Widget):
 
         with self.canvas.before:
             Color(rgba=(1,1,1,1))
-            Rectangle(size=self.tamanho, source=self.imagem, pos=self.Pos)
+            #Rectangle(size=self.tamanho, source=self.imagem, pos=self.Pos)
+            Image(source=self.imagem, pos=self.Pos, size=self.tamanho)
+
+    def upPosition(self, *args):
+        pass
